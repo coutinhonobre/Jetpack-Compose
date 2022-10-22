@@ -1,9 +1,11 @@
 package com.github.coutinhonobre.aluvery
 
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -23,22 +25,52 @@ fun MyFirstComposable() {
     Text(text = "Meu segundo texto maior")
 }
 
-@Preview(
-    name = "NewTextPreview",
-    uiMode = UI_MODE_NIGHT_YES,
-    showSystemUi = true
-)
-@Preview(
-    name = "NewTextPreviewLight",
-)
-@Preview(
-    name = "TextPreview",
-    heightDp = 200,
-    widthDp = 300,
-    showBackground = true,
-    backgroundColor = 0xFFFF1144
-)
+@Preview(showBackground = true)
 @Composable
-fun MyFirstComposablePreview() {
-    MyFirstComposable()
+fun ColumnPreview() {
+    Column {
+        Text(text = "Texto 1")
+        Text(text = "Texto 2")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun RowPreview() {
+    Row {
+        Text(text = "Texto 1")
+        Text(text = "Texto 2")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun BoxPreview() {
+    Box {
+       Text(text = "Texto 1")
+       Text(text = "Texto 2")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun CustomLayoutPreview() {
+    Column {
+        Text("Texto 1")
+        Text("Texto 2")
+    }
+    Row {
+        Text("Texto 3")
+        Text("Texto 4")
+    }
+    Box {
+        Row {
+            Text("Texto 5")
+            Text("Texto 6")
+        }
+        Column {
+            Text("Texto 7")
+            Text("Texto 8")
+        }
+    }
 }
